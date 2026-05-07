@@ -23,6 +23,7 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
         centerTitle: true,
         title: Text("Favorites", style: TextStyle(fontWeight: FontWeight.bold)),
       ),
+      // Food details description about Food 
       body: favoriteItems.isEmpty
           ? Center(
               child: Text(

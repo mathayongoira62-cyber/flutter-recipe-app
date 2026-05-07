@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:provider/provider.dart';
 import 'package:recipe_app/provider/favorite_provider.dart';
+import 'package:recipe_app/views/food_detail.dart';
 
 class FoodItemsDisplay extends StatelessWidget {
   final DocumentSnapshot<Object?> documentSnapshot;
@@ -16,7 +17,15 @@ class FoodItemsDisplay extends StatelessWidget {
     final String url = documentSnapshot['image'];
 
     return GestureDetector(
-      onTap: () {},
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) =>
+                FoodDetail(documentSnapshot: documentSnapshot),
+          ),
+        );
+      },
       child: Container(
         margin: const EdgeInsets.only(right: 10),
         width: 230,
@@ -106,7 +115,7 @@ class FoodItemsDisplay extends StatelessWidget {
               ),
             ),
 
-            // Favorite screen 
+            // Favorite screen
           ],
         ),
       ),
