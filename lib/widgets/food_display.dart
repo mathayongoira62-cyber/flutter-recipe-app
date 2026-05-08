@@ -26,6 +26,7 @@ class FoodItemsDisplay extends StatelessWidget {
           ),
         );
       },
+      
       child: Container(
         margin: const EdgeInsets.only(right: 10),
         width: 230,
@@ -34,14 +35,17 @@ class FoodItemsDisplay extends StatelessWidget {
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Container(
-                  width: double.infinity,
-                  height: 160,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(15),
-                    image: DecorationImage(
-                      fit: BoxFit.cover,
-                      image: NetworkImage(documentSnapshot['image']),
+                Hero(
+                  tag: documentSnapshot['image'],
+                  child: Container(
+                    width: double.infinity,
+                    height: 160,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(15),
+                      image: DecorationImage(
+                        fit: BoxFit.cover,
+                        image: NetworkImage(documentSnapshot['image']),
+                      ),
                     ),
                   ),
                 ),
