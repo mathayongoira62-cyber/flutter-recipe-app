@@ -85,7 +85,7 @@ class _ViewAllItemsState extends State<ViewAllItems> {
 
                   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 2,
-                    childAspectRatio: 0.78,
+                    childAspectRatio: 0.70,
                   ),
 
                   itemBuilder: (context, index) {
