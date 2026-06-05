@@ -17,11 +17,12 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
     super.initState();
 
     // Load favorites when the screen is opened.
-    WidgetsBinding.instance.addPostFrameCallback((_) {
+    WidgetsBinding.instance.addPostFrameCallback((_) async {
       final provider = FavoriteProvider.of(context, listen: false);
-      provider.loadFavorites();
+      await provider.loadFavorites();
     });
   }
+
 
   @override
   Widget build(BuildContext context) {

@@ -37,6 +37,7 @@ dependencies:
   firebase_core: ^4.7.0
   iconsax: ^0.0.8
   cloud_firestore: ^6.3.0
+  firebase_auth: ^6.5.2
   provider: ^6.1.5+1
   shimmer: ^3.0.0
 
