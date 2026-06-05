@@ -7,9 +7,8 @@ class FavoriteProvider extends ChangeNotifier {
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
   List<String> get favorites => _favoriteIds;
 
-  FavoriteProvider() {
-    loadFavorites();
-  }
+  FavoriteProvider();
+
 
   // toggle favorite state
   void toggleFavorite(DocumentSnapshot product) async {

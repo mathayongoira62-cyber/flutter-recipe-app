@@ -13,9 +13,25 @@ class ViewAllItems extends StatefulWidget {
 }
 
 class _ViewAllItemsState extends State<ViewAllItems> {
+  bool isLoading = true;
+
   final CollectionReference completeApp = FirebaseFirestore.instance.collection(
     "Complete-Flutter-App",
   );
+
+  //THIS IS THE MINIMUM TIMER FOR THE LOADING
+  @override
+  void initState() {
+    super.initState();
+
+    Future.delayed(const Duration(seconds: 10), () {
+      if (mounted) {
+        setState(() {
+          isLoading = false;
+        });
+      }
+    });
+  }
 
   @override
   Widget build(BuildContext context) {

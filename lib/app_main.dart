@@ -17,13 +17,13 @@ class _AppState extends State<App> {
 
   @override
   void initState() {
-    super.initState(); // always good practice to call this first
+    super.initState(); 
 
     page = [
       const AppHomeScreen(),
       const FavoriteScreen(),
       // navBarPage(Iconsax.heart5),
-      navBarPage(Iconsax.calendar5),
+      // navBarPage(Iconsax.calendar5),
       navBarPage(Iconsax.setting_21),
     ];
   }
@@ -62,12 +62,12 @@ class _AppState extends State<App> {
             icon: Icon(selectedIndex == 1 ? Iconsax.heart5 : Iconsax.heart),
             label: "Favorite",
           ),
-          BottomNavigationBarItem(
-            icon: Icon(
-              selectedIndex == 2 ? Iconsax.calendar5 : Iconsax.calendar,
-            ),
-            label: "Meal Plan",
-          ),
+          // BottomNavigationBarItem(
+          //   icon: Icon(
+          //     selectedIndex == 2 ? Iconsax.calendar5 : Iconsax.calendar,
+          //   ),
+          //   label: "Meal Plan",
+          // ),
           BottomNavigationBarItem(
             icon: Icon(
               selectedIndex == 3 ? Iconsax.setting_21 : Iconsax.setting_2,

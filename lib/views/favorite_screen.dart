@@ -13,10 +13,22 @@ class FavoriteScreen extends StatefulWidget {
 
 class _FavoriteScreenState extends State<FavoriteScreen> {
   @override
+  void initState() {
+    super.initState();
+
+    // Load favorites when the screen is opened.
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      final provider = FavoriteProvider.of(context, listen: false);
+      provider.loadFavorites();
+    });
+  }
+
+  @override
   Widget build(BuildContext context) {
     final provider = FavoriteProvider.of(context);
     final favoriteItems = provider.favorites;
     return Scaffold(
+
       backgroundColor: kbackgroundColor,
       appBar: AppBar(
         backgroundColor: kbackgroundColor,

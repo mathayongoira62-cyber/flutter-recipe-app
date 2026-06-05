@@ -1,9 +1,8 @@
-import 'dart:math';
-
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:recipe_app/skeletons/food_display_skeleton.dart';
 import 'package:recipe_app/utils/constants/colors.dart';
 import 'package:recipe_app/views/view_all.dart';
 import 'package:recipe_app/widgets/banner.dart';
@@ -78,7 +77,9 @@ class _AppHomeScreenState extends State<AppHomeScreen> {
                           onPressed: () {
                             Navigator.push(
                               context,
-                              MaterialPageRoute(builder: (_) => const ViewAllItems()),
+                              MaterialPageRoute(
+                                builder: (_) => const ViewAllItems(),
+                              ),
                             );
                           },
                           child: Text(
@@ -114,7 +115,26 @@ class _AppHomeScreenState extends State<AppHomeScreen> {
                     );
                   }
 
-                  return const Center(child: CircularProgressIndicator());
+                  // return const Center(child: CircularProgressIndicator());
+
+                  // THIS IS FOR THE SKELETON LOADING 
+                  return GridView.builder(
+                    shrinkWrap: true,
+                    physics: const NeverScrollableScrollPhysics(),
+
+                    itemCount: 6,
+
+                    gridDelegate:
+                        const SliverGridDelegateWithFixedCrossAxisCount(
+                          crossAxisCount: 2,
+                          childAspectRatio: 0.70,
+                        ),
+
+                    itemBuilder: (context, index) {
+                      return const FoodItemSkeleton();
+                    },
+                  );
+
                 },
               ),
             ],
